@@ -10,3 +10,42 @@
 .bg-celadonBlue{
     background-color: #457B9D;
 }
+.bg-prussianBlue{
+    background-color: #1D3557;
+}
+.bg-footer{
+    background-color: #0e1b2c;
+}
+.contact{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.contact li a:link, .contact li a:visited{
+    text-decoration: none;
+    color: #f8f9fa;
+}
+.contact li a:hover{
+    text-decoration: none;
+    color: #3b69c0;
+}
+.scroll-up {
+    font-family: sans-serif;
+    background-color: rgb(33,30,27);
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    border-radius: 5px;
+}
+.scroll-up a {
+    padding: 10px 20px;
+    font-size: 30px;
+}
+.scroll-up a:link, .scroll-up a:visited {
+    text-decoration: none;
+    color: #f8f9fa;
+}
+.scroll-up a:hover, .scroll-up a:active {
+    text-decoration: none;
+    color: #f8f9fa;
+}
