@@ -20,7 +20,7 @@
   <body>
     <!-- Navbar -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-red sticky-top">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-red sticky-top">
       <div class="container">
         <a class="navbar-brand" href="index.html">Andre Andrian</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,7 +61,7 @@
 
     <!-- About -->
 
-    <section class="bg-powderBlue text-center">
+    <section id="aboutMe" class="bg-powderBlue text-center">
       <div class="container">
         <div class="row">
           <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">
@@ -87,7 +87,7 @@
 
     <!-- Experience -->
 
-    <section class="bg-celadonBlue pt-3">
+    <section id="experience" class="bg-celadonBlue pt-3">
       <div class="container">
         <div class="row text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
           <h2>Experience</h2>
@@ -134,7 +134,7 @@
         </div>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
+        <path id="contactSVG"
           fill="#1D3557"
           fill-opacity="1"
           d="M0,96L48,117.3C96,139,192,181,288,213.3C384,245,480,267,576,256C672,245,768,203,864,208C960,213,1056,267,1152,261.3C1248,256,1344,192,1392,160L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
@@ -183,9 +183,17 @@
       <a href="#">&and;</a>
     </div>
 
+    <!-- Switch Mode -->
+    
+    <div id="switchBtn" class="switchBtn" onclick="switchDarkMode()">
+      <i class="bi bi-moon-fill"></i>
+    </div>
+    
+    <!-- End Switch Mode -->
+
     <!-- Footer -->
 
-    <footer class="bg-footer text-light text-center p-2">Created with <i class="bi bi-suit-heart-fill" style="color: red;"></i> by Andre</footer>
+    <footer id="footer" class="bg-footer text-light text-center p-2">Created with <i class="bi bi-suit-heart-fill" style="color: red;"></i> by Andre &copy; 2022</footer>
 
     <!-- End Footer -->
 
@@ -223,6 +231,82 @@
         text: "Andrian Dwi Baitur Rizky",
         delay: 1
       });
+    </script>
+
+    <!-- My Script -->
+    <script>
+      if (localStorage.getItem("mode") === "dark") {
+        switchDarkMode();
+      }
+
+      function switchDarkMode(){
+
+        let icons = '';
+        let isDark = document.getElementById("switchBtn").classList.toggle("switchBtn-dark");
+        if (isDark) {
+          icons = '<i class="bi bi-brightness-high-fill"></i>';
+          //remove
+          document.getElementById("navbar").classList.remove("navbar-light");
+          document.getElementById("navbar").classList.remove("bg-red");
+          document.getElementById("jumbotron").classList.remove("bg-honeydew");
+          document.getElementById("aboutMe").classList.remove("bg-powderBlue");
+          document.getElementById("experience").classList.remove("bg-celadonBlue");
+          document.getElementById("contact").classList.remove("bg-prussianBlue");
+          document.getElementById("footer").classList.remove("bg-footer");
+
+          //add
+          document.getElementById("navbar").classList.add("navbar-dark");
+          document.getElementById("navbar").classList.add("bg-richBlack");
+          document.getElementById("jumbotron").classList.add("bg-richBlack2");
+          document.getElementById("jumbotron").classList.add("text-light");
+          document.getElementById("aboutMe").classList.add("bg-richBlack3");
+          document.getElementById("aboutMe").classList.add("text-light");
+          document.getElementById("experience").classList.add("bg-prussianBlue2");
+          document.getElementById("experience").classList.add("text-light");
+          document.getElementById("contact").classList.add("bg-prussianBlue3");
+          document.getElementById("footer").classList.add("bg-footer2");
+
+          // svg
+          document.getElementById("about").setAttribute("fill", "#001A2C");
+          document.getElementById("exp").setAttribute("fill", "#002137");
+          document.getElementById("contactSVG").setAttribute("fill", "#00253E");
+
+          // storage
+          localStorage.setItem("mode", "dark");
+        } else {
+          icons = '<i class="bi bi-moon-fill"></i>';
+          // remove
+          document.getElementById("navbar").classList.remove("navbar-dark");
+          document.getElementById("navbar").classList.remove("bg-richBlack");
+          document.getElementById("jumbotron").classList.remove("bg-richBlack2");
+          document.getElementById("jumbotron").classList.remove("text-light");
+          document.getElementById("aboutMe").classList.remove("bg-richBlack3");
+          document.getElementById("aboutMe").classList.remove("text-light");
+          document.getElementById("experience").classList.remove("bg-prussianBlue2");
+          document.getElementById("experience").classList.remove("text-light");
+          document.getElementById("contact").classList.remove("bg-prussianBlue3");
+          document.getElementById("footer").classList.remove("bg-footer2");
+
+          // add
+          document.getElementById("navbar").classList.add("navbar-light");
+          document.getElementById("navbar").classList.add("bg-red");
+          document.getElementById("jumbotron").classList.add("bg-honeydew");
+          document.getElementById("aboutMe").classList.add("bg-powderBlue");
+          document.getElementById("experience").classList.add("bg-celadonBlue");
+          document.getElementById("contact").classList.add("bg-prussianBlue");
+          document.getElementById("footer").classList.add("bg-footer");
+
+          // svg
+          document.getElementById("about").setAttribute("fill", "#A8DADC");
+          document.getElementById("exp").setAttribute("fill", "#457B9D");
+          document.getElementById("contactSVG").setAttribute("fill", "#1D3557");
+
+          // storage
+          localStorage.removeItem("mode");
+        }
+        document.getElementById("switchBtn").innerHTML = icons;
+        // document.getElementById("switchBtn").classList.toggle("switchBtn-dark");
+      }
     </script>
   </body>
 </html>

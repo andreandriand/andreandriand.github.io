@@ -1,3 +1,4 @@
+/* Background Light*/
 .bg-red{
     background-color: #E63946;
 }
@@ -16,6 +17,27 @@
 .bg-footer{
     background-color: #0e1b2c;
 }
+
+/* Background Dark */
+.bg-richBlack{
+    background-color: #002E4E;
+}
+.bg-richBlack2{
+    background-color: #001523;
+}
+.bg-richBlack3{
+    background-color: #001A2C;
+}
+.bg-prussianBlue2{
+    background-color: #002137;
+}
+.bg-prussianBlue3{
+    background-color: #00253E;
+}
+.bg-footer2{
+    background-color: #003356;
+}
+
 .contact{
     list-style-type: none;
     margin: 0;
@@ -31,7 +53,7 @@
 }
 .scroll-up {
     font-family: sans-serif;
-    background-color: rgb(33,30,27);
+    background-color: rgb(33,30,27); /* #211e1b */
     position: fixed;
     bottom: 50px;
     right: 10px;
@@ -48,4 +70,27 @@
 .scroll-up a:hover, .scroll-up a:active {
     text-decoration: none;
     color: #f8f9fa;
+}
+
+.switchBtn {
+    font-family: sans-serif;
+    background-color: rgb(241, 241, 240);
+    position: fixed;
+    bottom: 7rem;
+    right: 10px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    padding: 0.3rem 0.6rem;
+}
+
+.switchBtn-dark {
+    font-family: sans-serif;
+    background-color: #00406C; /* #044766 */
+    color: #ffd23c;
+    position: fixed;
+    bottom: 7rem;
+    right: 10px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    padding: 0.3rem 0.6rem;
 }
